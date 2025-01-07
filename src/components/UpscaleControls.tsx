@@ -8,7 +8,7 @@ const UpscaleControls: React.FC = () => {
   const [scale, setScale] = useState('x2');
   const { resultImage, loading, error, upscaleImage } = useUpscaleImage();
   const [upscaledImageUrl, setUpscaledImageUrl] = useState<string | null>(null);
-  const [uploadedImageUrl, setUploadedImageUrl] = useState<string | null>(localStorage.getItem('uploadedImageUrl'));
+  const [uploadedImageUrl, ] = useState<string | null>(localStorage.getItem('uploadedImageUrl'));
 
   const handleScaleChange = (event: SelectChangeEvent) => {
     setScale(event.target.value);
