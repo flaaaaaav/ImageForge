@@ -10,8 +10,9 @@ const useImageUpload = () => {
 
     const formData = new FormData();
     formData.append('file', image);
-    formData.append('upload_preset', 'ml_default');
-    formData.append('api_key', '656265334167881');
+    formData.append('upload_preset', import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET as string);
+    formData.append('api_key', import.meta.env.VITE_CLOUDINARY_API_KEY as string);
+
 
     try {
       const response = await fetch('https://api.cloudinary.com/v1_1/dpowqkadm/image/upload', {
